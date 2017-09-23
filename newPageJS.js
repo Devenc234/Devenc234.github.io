@@ -9,7 +9,7 @@ myHeading.textContent = 'Hello world!'
 // myHeading.textContent = myvar.name;
 
 
-    var requestURL = 'newPageJSON.json';
+    var requestURL = 'https://github.com/Devenc234/Devenc234.github.io/blob/master/newPageJSON.json';
     var request = new XMLHttpRequest();
     request.open('GET', requestURL);
     request.responseType = 'json';
