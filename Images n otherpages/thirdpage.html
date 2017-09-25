@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="thirdpageStylesheet.css"/>
+		<title></title>
+	</head>
+	<body>
+		<div class="friend" id="best_friend"><p>Arthur</p></div>
+		<div class="friend"><p>Batmanuel</p></div>
+		<div class="friend"><p>Captain Liberty</p></div>
+		<div class="friend"><p>The City</p></div>
+		<div class="friend"><p>Justice</p></div>
+		<div class="family"><p>Mom</p></div>
+		<div class="family"><p>Dad</p></div>
+		<div class="family"><p>Bro</p></div>
+		<div class="family"><p>Sis</p></div>
+		<div class="family"><p>Rex</p></div>
+		<div class="enemy"><p>Baron Violent</p></div>
+		<div class="enemy"><p>The Breadmaster</p></div>
+		<div class="enemy"><p>The Deadly Nose</p></div>
+		<div class="enemy"><p>Dinosaur Neil</p></div>
+		<div class="enemy" id="archnemesis"><p>Chairface</p></div>
+
+		<br> <br>
+		<div id="Arsenal">
+				<div class="friend"> <p>Ozil </p></div>
+<div class="family"> Sanchez </div>
+<div class="family"> Giroud </div>
+		<div class="enemy"> Wenger </div>
+		
+		<div class="friend" id="best_friend"> kafdkaf</div>
+		<div class="enemy" id="archnemesis"> adfadf</div>
+		</div>
+
+
+		<hr>
+		This is a horizontal row
+		<hr>
+		<pre>
+			
+			This is pre.
+			The text inside a <pre> element is displayed 
+				in a fixed-width font (usually Courier), and 
+				it preserves both spaces and line breaks:
+		</pre>
+		<hr>
+		<p>It can be used as quote or comment</p>
+		 <p>WWF's goal is to: <mark><q>Build a future where people live in harmony with nature.</q></mark></p> 
+		 <hr>
+		 <p>Browsers usually indent blockquote elements.</p>
+
+<blockquote cite="http://www.worldwildlife.org/who/index.html">
+For 50 years, WWF has been protecting the future of nature.
+The world's leading conservation organization,
+WWF works in 100 countries and is supported by
+1.2 million members in the United States and
+close to 5 million globally.
+</blockquote>
+<hr>
+<p>The  <mark> <abbr title="World Health Organization">WHO</abbr></mark> was founded in 1948.</p>
+
+<p>Marking up abbreviations can give useful information to browsers, translation systems and search-engines.</p>
+<hr>
+
+<p>The HTML address element defines contact information (author/owner) of a document or article.</p>
+
+<address>
+Written by John Doe.<br> 
+Visit us at:<br>
+Example.com<br>
+Box 564, Disneyland<br>
+USA
+</address>
+<hr>
+<p>The HTML cite element defines the title of a work.</p>
+<p>Browsers usually display cite elements in italic.</p>
+
+<img src="img_the_scream.jpg" width="220" height="277" alt="The Scream">
+<p><cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p>
+
+<hr>
+<p> opening in a new tab</p>
+ <a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a> 
+ <hr>
+<p><a href="#C4">Jump to Chapter 4</a></p>
+
+<h2>Chapter 1</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 2</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 3</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2 id="C4">Chapter 4</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 5</h2>
+<p>This chapter explains ba bla bla</p>
+<hr>
+
+<p>It is better to use the style attribute to set the width and height of an image
+(instead of using the width and height attributes), because it prevents 
+internal or external styles sheets to change the original size of an image:</p>
+
+<p>Using the style attribute:</p>
+<img src="ozil.jpg" alt="Ozil Icon" style="width:128px;height:128px;">
+
+<p>Using the width and height attributes:</p>
+<img src="ozil.jpg" alt="Ozil Icon" width="128" height="128">
+<hr>
+
+
+<p>The GIF standard allows moving images.</p>
+
+<img src="programming.gif" alt="Computer man" style="width:48px;height:48px;">
+<hr>
+
+<p><strong>Float the image to the right:</strong></p>
+<p>
+<img src="smiley.gif" alt="Smiley face" style="float:right;width:42px;height:42px;">
+A paragraph with a floating image. A paragraph with a floating image. A paragraph with a floating image.
+</p>
+
+<p><strong>Float the image to the left:</strong></p>
+<p>
+<img src="smiley.gif" alt="Smiley face" style="float:left;width:42px;height:42px;">
+A paragraph with a floating image. A paragraph with a floating image. A paragraph with a floating image.  
+</p>
+
+<p>Please use the CSS float property. The align attribute is deprecated in HTML 4, and not supported in HTML5.</p>
+
+
+<hr>
+
+
+
+
+<p>Click on the sun or on one of the planets to watch it closer:</p>
+
+<img src="planets.gif" alt="Planets" usemap="#planetmap" style="width:145px;height:126px;">
+
+<map name="planetmap">
+  <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+  <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+  <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+</map>
+
+
+
+
+<hr>
+
+
+
+
+<picture>
+  <source media="(min-width: 650px)" srcset="img_pink_flowers.jpg">
+  <source media="(min-width: 465px)" srcset="img_white_flower.jpg">
+  <img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
+</picture>
+
+<p>Resize the browser to see different versions of the picture loading at different viewport sizes.
+The browser looks for the first source element where the media query matches the user's current viewport width,
+and fetches the image specified in the srcset attribute.</p>
+
+<p>The img element is required as the last child tag of the picture declaration block.
+The img element is used to provide backward compatibility for browsers that do not support the picture element, or if none of the source tags matched.
+</p>
+
+<p><strong>Note:</strong> The picture element is not supported in IE12 and earlier or Safari 9.0 and earlier.</p>
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+<h2>Cell that spans two rows:</h2>
+<table style="width:100%">
+  <tr>
+    <th>Name:</th>
+    <td>Bill Gates</td>
+    
+  </tr>
+  <tr>
+    <th rowspan="2">Telephone:</th>
+    <td>55577854</td>
+  </tr>
+  <tr>
+    <td>55577855</td>
+  </tr>
+</table>
+
+
+
+
+
+<hr>
+
+
+
+<h2>A Description List</h2>
+
+<dl>
+  <dt>Coffee</dt>
+  <dd>- black hot drink</dd>
+  <dt>Milk</dt>
+  <dd>- white cold drink</dd>
+</dl>
+
+
+<hr>
+
+
+
+
+	<ul >
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+
+
+
+<hr>
+
+
+<h2>Ordered List with Roman Numbers</h2>
+
+<ol type="I">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>  
+
+
+<hr>
+
+
+
+
+
+<div style="background-color:black;color:white;padding:20px;	position: relative;
+	display: inline-block;
+	height: auto;
+	width: auto;
+	border-radius: 0%;">
+  <h2>London</h2>
+  <p>London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+  <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+</div> 
+
+
+<hr>
+
+
+
+
+<div class="cities">
+<h2>London</h2>
+<p>London is the capital of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+</div>
+
+<div class="cities">
+<h2>Paris</h2>
+<p>Paris is the capital and most populous city of France.</p>
+</div>
+
+<div class="cities">
+<h2>Tokyo</h2>
+<p>Tokyo is the capital of Japan, the center of the Greater Tokyo Area,
+and the most populous metropolitan area in the world.</p>
+</div>
+
+
+<hr>
+
+
+
+
+
+<p><a href="secondpage.html" target="iframe_a">Second page</a></p>
+
+<p>When the target of a link matches the name of an iframe, the link will open in the iframe.</p>
+<iframe height="300px" width="100%" src="https://www.w3schools.com" name="iframe_a"></iframe>
+
+<hr>
+
+	</body>
+</html>

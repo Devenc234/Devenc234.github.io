@@ -1,0 +1,56 @@
+/*Define your CSS id #serious below!*/
+
+#serious {
+    font-weight:bold;
+    font-size:2em;
+    text-align:center;
+    color:#CC0000;
+    font-family:Courier;
+    }
+
+#intro{
+    color:#B83C3A;
+    }
+.standout{ color:#F7AC5F; font-family:Verdana;}
+
+
+a:hover {
+	color: #cc0000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:link{
+    text-decoration:none;
+    color:#008B45;
+    }
+
+a:hover{
+    color:#00FF00;
+    }
+a:visited{
+    color:#EE9A00}
+
+
+p:first-child {
+    color: red;
+    font-family:Cursive;
+}
+
+p:nth-child(2) {
+    color: #CC0000;
+    font-family:Tahoma;
+}
+p:nth-child(3) {
+    color: #CC0000;
+    font-family:Tahoma;
+}
+p:nth-child(4) {
+    background-color: #00FF00;
+    font-family:Tahoma;
+}
+p:nth-child(5) {
+    background-color: #00FF00;
+    font-family:Tahoma;
+    font-size:22px;
+}
