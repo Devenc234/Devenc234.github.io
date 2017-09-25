@@ -5,7 +5,7 @@
 <link rel="shortcut icon" href ="Images/my_photo1.ico"/>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="Stylesheets/style1.css">
+<link rel="stylesheet" href="Stylesheets/style2.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
@@ -62,8 +62,9 @@ body, html {
     </a>
     <a href="#home" class="w3-bar-item w3-button">HOME</a>
     <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PHOTOS</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="projects.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-file-code-o" aria-hidden="true"></i> Projects</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
       <i class="fa fa-search"></i>
     </a>
@@ -72,8 +73,9 @@ body, html {
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
     <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PHOTOS</a>
     <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">Projects</a>
     <a href="#" class="w3-bar-item w3-button">SEARCH</a>
   </div>
 </div>
@@ -100,9 +102,9 @@ body, html {
 
           <!-- Hide this text on small devices -->
           <div class="w3-col m6 w3-hide-small w3-padding-large">
-          	<br>
-          	<br>
-          	<br>
+            <br>
+            <br>
+            <br>
             <p>Welcome to my website. Some interesting description about myself goes here.</p>
           </div>
         </div>
@@ -159,54 +161,38 @@ body, html {
 <div class="w3-content w3-container w3-padding-64" id="portfolio">
   <h3 class="w3-center">MY WORK</h3>
   <p class="w3-center"><em>Here are some of my latest instagram posts.<br> Click on the images to make them bigger</em></p><br>
-
-  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="w3-row-padding w3-center">
-    <div class="w3-col m3">
-      <img src="Images/insta1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="Images/insta2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="Images/insta3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="Images/insta4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
-    </div>
-  </div>
-
-  <div class="w3-row-padding w3-center w3-section">
-   <!--  <div class="w3-col m3">
-      <img src="Images/insta5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
-    </div> -->
-
-    <div class="w3-col m3">
-      <img src="Images/insta6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="Images/insta7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="Images/insta8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
-    </div>
-    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
-  </div>
+    <!-- <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button> -->
 </div>
 
 <!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="w3-image">
-    <p id="caption" class="w3-opacity w3-large"></p>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2 id="modal-image-name"> Image Name</h2>
+    </div>
+    <div class="modal-body">
+      <p id="modal-image-description">Some text in the Modal Body(image description)</p>
+      <img id="modal-image">
+    </div>
+    <div class="modal-footer">
+      <h6 style="text-align: center;">Copyright &copy; Devenc234</h6>
+    </div>
   </div>
+
 </div>
+
+<script type="text/javascript" src="Jsons/Images.json"></script>
+<script type="text/javascript" src="Javascripts/GalleryUsingJson.js"></script>
+
+
+
+
+
+
 
 <!-- Third Parallax Image with Portfolio Text -->
 <div class="bgimg-3 w3-display-container w3-opacity-min">
@@ -231,6 +217,8 @@ body, html {
         <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +91 7607313999<br>
         <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: devendra072@gmail.com<br>
       </div>
+
+      
       <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
 
             <form action="/action_page.php" target="_blank">
@@ -324,101 +312,101 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
 <!-- 
 </body>
 =======
-	<head>
-		<title>Devenc234</title>
-	</head>
-	<body style="background-color:gainsboro">
-		<h1> Myself </h1>
+  <head>
+    <title>Devenc234</title>
+  </head>
+  <body style="background-color:gainsboro">
+    <h1> Myself </h1>
 <p> Once a gooner, always a gooner. </p>
 <p> You will never walk alone. </p>
 <p> Beleive in yourself. </p>
 <a href="https://twitter.com/devendra072"> Follow me on Twitter </a>
-		
-		<h2> Leagues I follow with preference</h2>
-		<ol> 
-		    <li> EPL </li>
-		    <li> La Liga </li>
-		    <li> French League </li>
-		    <li> Serie A </li>
-		</ol>
-		
-		<h2> Player I like</h2>
-		<ul> 
-		    <li> Messi </li>
-		    <li> Ozil </li>
-		    <li> Ronaldo </li>
-		    <li>  </li>
-		</ul>
-		
-		<ol>
-			<li>Dad's interests
-				<ul>
-					<li>football</li>
-					<li>knitting</li>
-				</ul>
-			</li>
-			<li>Mom's interests
-				<ul>
-					<li>hating football</li>
-					<li>skydiving</li>
-				</ul>
-			</li>
-		</ol>
-		
-		
-		<ul> <li>Top EPL players </li>
-		    <ol style="background-color:brown">
-		        <li> Kane </li>
-		        <li> Sergio </li>
-		        <li> Alexis </li>
-		    </ol>
-		    <li>Top La Liga players </li>
-		    <ol>
-		        <li> Ronaldo </li>
-		        <li> Messi </li>
-		        <li> Neymar </li>
-		        <li> Modric </li>
-		    </ol>
-		</ul>
-		
-		<a href="https://www.w3.org/TR/css3-color/#svg-color"> Colour guideline here!! </a>
-		
-			<h4 style="color:green;size:16px">Big Heading</h4>
-			<pstyle="color:violet">A giant bear and a little duck were friends.</p>
-			<p style="color:red;size:10px">But the bear got hungry and ate the duck.</p>
-		<p style="font-size: 10px"> Some text for you to make tiny! </p>
-		<p style="font-size: 20px"> Some text for you to make normal size!</p>
-		<p style="font-size: 40px"> Some text for you to make super big!</p>		
+    
+    <h2> Leagues I follow with preference</h2>
+    <ol> 
+        <li> EPL </li>
+        <li> La Liga </li>
+        <li> French League </li>
+        <li> Serie A </li>
+    </ol>
+    
+    <h2> Player I like</h2>
+    <ul> 
+        <li> Messi </li>
+        <li> Ozil </li>
+        <li> Ronaldo </li>
+        <li>  </li>
+    </ul>
+    
+    <ol>
+      <li>Dad's interests
+        <ul>
+          <li>football</li>
+          <li>knitting</li>
+        </ul>
+      </li>
+      <li>Mom's interests
+        <ul>
+          <li>hating football</li>
+          <li>skydiving</li>
+        </ul>
+      </li>
+    </ol>
+    
+    
+    <ul> <li>Top EPL players </li>
+        <ol style="background-color:brown">
+            <li> Kane </li>
+            <li> Sergio </li>
+            <li> Alexis </li>
+        </ol>
+        <li>Top La Liga players </li>
+        <ol>
+            <li> Ronaldo </li>
+            <li> Messi </li>
+            <li> Neymar </li>
+            <li> Modric </li>
+        </ol>
+    </ul>
+    
+    <a href="https://www.w3.org/TR/css3-color/#svg-color"> Colour guideline here!! </a>
+    
+      <h4 style="color:green;size:16px">Big Heading</h4>
+      <pstyle="color:violet">A giant bear and a little duck were friends.</p>
+      <p style="color:red;size:10px">But the bear got hungry and ate the duck.</p>
+    <p style="font-size: 10px"> Some text for you to make tiny! </p>
+    <p style="font-size: 20px"> Some text for you to make normal size!</p>
+    <p style="font-size: 40px"> Some text for you to make super big!</p>    
 
-		<a href="https://www.w3.org/TR/CSS21/fonts.html#generic-font-families"> Font guideline here!! </a>
-		
-				<h1 style="font-family: Arial">Big title</h1>
-		 <ol>
-		 	<li style="font-size:16px;font-family:Arial">This item is big Arial.</li>
-		 	<li style="font-size:12px;font-family:Verdana">This item is medium Verdana.</li>
-		 	<li style="font-size:10px;font-family:Impact">This item is small Impact.</li>
-		 </ol>
-		
-		
-		<h3 style="text-align:center">Favorite Football Teams</h3>
-			<ol>
-				<li style="text-align:left">The Hawthorn Football Club</li>	
-				<li style="text-align:center">San Franscisco 49ers</li>
-				<li style="text-align:right">Barcelona FC</li>
-			</ol>
-		
-		
-		
-			<p> <strong> Using bold </strong></p>
-		<p>Do you hear the people  <strong>sing </strong> ?</p> 
-		<p>No I don't. I'm  <strong>too </strong> busy eating cake.</p>
-	
-		<em> Using Italicize </em>
-		<p>Hey, don't say <em>that</em>!</p>
-		<p>I am <em>so</em> tired.</p>
-	
-		<p>
-			
+    <a href="https://www.w3.org/TR/CSS21/fonts.html#generic-font-families"> Font guideline here!! </a>
+    
+        <h1 style="font-family: Arial">Big title</h1>
+     <ol>
+      <li style="font-size:16px;font-family:Arial">This item is big Arial.</li>
+      <li style="font-size:12px;font-family:Verdana">This item is medium Verdana.</li>
+      <li style="font-size:10px;font-family:Impact">This item is small Impact.</li>
+     </ol>
+    
+    
+    <h3 style="text-align:center">Favorite Football Teams</h3>
+      <ol>
+        <li style="text-align:left">The Hawthorn Football Club</li> 
+        <li style="text-align:center">San Franscisco 49ers</li>
+        <li style="text-align:right">Barcelona FC</li>
+      </ol>
+    
+    
+    
+      <p> <strong> Using bold </strong></p>
+    <p>Do you hear the people  <strong>sing </strong> ?</p> 
+    <p>No I don't. I'm  <strong>too </strong> busy eating cake.</p>
+  
+    <em> Using Italicize </em>
+    <p>Hey, don't say <em>that</em>!</p>
+    <p>I am <em>so</em> tired.</p>
+  
+    <p>
+      
     Make ordered and unordered lists
     Change the color, size and type of font
     Add comments to our HTML file
@@ -426,19 +414,19 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
     Align text
     Bold and italicize text
 
-		</p>
-		
-	 -->
+    </p>
+    
+   -->
 
-<!-- 	
-	<img src ="http://s3.amazonaws.com/codecademy-blog/assets/ninja_zpsa5dbe37a.jpg"> Hey there, Welcome to Ninja World <img>
-	</body>
-	
-	
+<!--  
+  <img src ="http://s3.amazonaws.com/codecademy-blog/assets/ninja_zpsa5dbe37a.jpg"> Hey there, Welcome to Ninja World <img>
+  </body>
+  
+  
 <a href="https://twitter.com/devendra072" <img src = "https://seeklogo.com/images/A/arsenal-fc-logo-1E7333F23E-seeklogo.com.png">
-		
-	<img src="https://www.arsenal.com/sites/default/files/styles/large_16x9/public/images/arsenal_crest.jpg?itok=xmJUu9-A" />
-		
-	</body>
+    
+  <img src="https://www.arsenal.com/sites/default/files/styles/large_16x9/public/images/arsenal_crest.jpg?itok=xmJUu9-A" />
+    
+  </body>
 >>>>>>> fdfc534e28b57d213ba58f227cabcbec88d3b48b  -->
 </html>
