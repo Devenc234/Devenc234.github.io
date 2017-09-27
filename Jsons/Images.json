@@ -1,55 +1,55 @@
 var myImagesData = 
-{	
-	
-	"directory":"Images/",
+{ 
+  
+  "directory":"Images/",
 
-	"images" : [
+  "images" : [
     {
       "name" : "at Charminar, Hyderabad",
       "url" : "insta1.jpg",
       "description" : "The Charminar, constructed in 1591, is a monument and mosque located in Hyderabad, Telangana, India. The landmark has become a global icon of Hyderabad, listed among the most recognized structures of India.",
-      "uploadDate" : ""
+      "uploadDate" : "25/09/2017"
     },
     {
       "name" : "The Glenlevit",
       "url" : "insta2.jpg",
       "description" : "The Glenlivet. One place. One whisky.",
-      "uploadDate" : ""
+      "uploadDate" : "25/09/2017"
     },
     {
       "name" : "Nostalgia",
       "url" : "insta3.jpg",
       "description" : "Aue Umar! tu cheen sakti h bachpan mera, par bachpana nhi.",
-      "uploadDate" : ""
+      "uploadDate" : "25/09/2017"
     },
     {
       "name" : "Tree at airstrip, IITK",
       "url" : "insta4.jpg",
       "description" : "The axe forgets what the tree remembers.",
-      "uploadDate" : ""
+      "uploadDate" : "25/09/2017"
     },
     {
       "name" : "The DarthVader",
       "url" : "insta5.jpg",
       "description" : "The darkness that surrounds us can not hurt us. It is the darkness in your own heart which you should fear.",
-      "uploadDate" : ""
+      "uploadDate" : "25/09/2017"
     },
     {
       "name" : "Yoga Man",
       "url" : "insta6.jpg",
       "description" : "When you own your breath, nobody can steal your peace.",
-      "uploadDate" : ""
+      "uploadDate" : "25/09/2017"
     },
     {
       "name" : "Office to Mountains",
       "url" : "insta7.jpg",
       "description" : "It is not the mountains we conqure but ourselves.",
-      "uploadDate" : ""
+      "uploadDate" : "25/09/2017"
     },
     {
       "name" : "Status quo",
       "url" : "insta8.jpg",
       "description" : " Status quo, you know, is latin for 'the mess we are in '  #RonaldReagan",
-      "uploadDate" : ""
+      "uploadDate" : "25/09/2017"
     }]
 };
