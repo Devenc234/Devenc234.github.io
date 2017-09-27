@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GalleryAdmin</title>
+
+
+<link rel="shortcut icon" href ="Images/my_photo1.ico"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Stylesheets/style3.css">
+<link rel="stylesheet" href="Stylesheets/GalleryAdminFormStyle.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body onload="loadImages()">
+
+	<!-- Container (Portfolio Section) -->
+<div id="portfolio-container" class="w3-content w3-container w3-padding-64">
+  <h3 class="w3-center" style="color: #808080">MY WORK</h3>
+  <p class="w3-center" style="color: #808080"><em>Here are some of my latest instagram posts.<br> Click on the images to make them bigger</em></p><br> 
+      
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2 id="modal-image-name"> Gallery Admin</h2>
+    </div>
+    <div class="modal-body">
+
+        <form id="myImageGalleryAdminForm" action="/myImageGalleryAdminForm.php" method="post">
+          <div>
+            <label for="imageName"> Name:</label>
+            <input type="text" name="imageName" id="imageName">
+          </div>
+          <div>
+            <label for="imageURL"> URL:</label>
+            <input type="text" name="imageURL" id="imageURL">
+          </div>
+          <div>
+            <label for="imageInfo"> Information:</label>
+            <input type="text" name="imageInfo" id="imageInfo">
+          </div>
+          <div>
+            <label for="imageUploadDate"> Upload Date:</label>
+            <input type="text" name="imageUploadDate" id="imageUploadDate">
+          </div>
+          
+        </form>
+
+        <div id="ImageGalleryEditOption"">
+          <!-- <i class="fa fa-floppy-o fa-3x" aria-hidden="true" style="padding: 20px;" ></i> -->
+          <i id="editButton" class="fa fa-pencil-square fa-3x" aria-hidden="true" style="padding: 20px;"></i>
+          <i id="addButton" class="fa fa-plus-square fa-3x" aria-hidden="true" style="padding: 20px;"></i>
+          <i id="deleteButton" class="fa fa-trash fa-3x" aria-hidden="true" style="padding: 20px; "></i>
+        </div>
+
+
+
+        <!-- <div id="modal-body-imgDiv" class="modal-body"> -->
+        <img id="modal-image" class="modal-image">
+        <!-- </div> -->
+      
+    </div>
+    <div class="modal-footer">
+      <h6 style="text-align: center;">Copyright &copy; Devenc234</h6>
+    </div>
+  </div>
+
+</div>
+
+
+
+</body>
+
+<script type="text/javascript" src="Jsons/Images.json"></script>
+<script type="text/javascript" src="Javascripts/GalleryAdmin.js"></script>
+
+</html>
