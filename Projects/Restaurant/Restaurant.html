@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<title> Dhaba</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="RestaurantCSS.css">
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <style>
+.w3-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+</style>
+
+
+<body style="margin-top: 0; margin: auto; box-sizing: border-box;" onload="loadDhaba()">
+
+<div class="header">
+  	<p> Welcome to DadiMa Da Dhaba !</p>
+	<hr style="size: 2px;">
+</div>
+
+<div class="row">
+
+	<div class="column left" style="background-color:#aaa;">
+		  <div>
+		    <h3 style="text-align: center;" ><b>Table</b></h3> 
+		    <input type="text" placeholder="Search Table" name="table_input" id ="input1" onkeyup="filterTables()" class="search-border" title = "Search by table names">
+		    <i class="fa fa-search"></i>
+		    <hr>
+		  </div>
+
+		  <div id="Tables" style="font-weight:bold; padding: 20px;">
+		  </div>
+	</div>
+
+
+
+
+	<div class="column right" style="background-color:#bbb;">
+			<div>
+		    <h3 style="text-align: center;" >
+		    	<b>Menu</b> 
+      		</h3> 
+
+      		<input type="text" placeholder="Search menu...by course,by food" name="menu_input" id ="input2" onkeyup="filterMenu()" class="search-border" title = "Search menu...by course,by food">
+      		<i class="fa fa-search"></i>
+
+    		<hr>
+		 	</div>
+		 	<!-- Product grid -->
+			<div class="w3-row w3-grayscale" id="foodItems">
+			</div>
+
+	</div>
+</div>
+
+
+<!-- <div class="footer">
+  <p>Footer</p>
+</div> -->
+
+    <div id="myModal" style="z-index: 3;">
+      <div class="modal-content">
+          <span id="close">&times;</span>
+          <div id = "container1">
+            <div id="billHeader"></div>
+          </div>
+          <div id = "container2">
+            <div style="height: 20px"></div>
+            <table style="width:100%" id="billTable">
+            </table>
+          </div>
+          <div id = "container3">
+            <div id="billFooter">CLOSE SESSION (GENERATE BILL)</div>
+          </div>
+      </div>
+    </div> 
+
+</body>
+
+<script type="text/javascript" src="itemData.json"></script>
+<script type="text/javascript" src="RestaurantJS.js"></script>
+
+</html>

@@ -1,0 +1,32 @@
+var menuData = [
+		{"id":"Food-1","type":"starters","name":"French Fries","cost":60},
+		{"id":"Food-2","type":"starters","name":"Chilly Babycorn","cost":110},
+		{"id":"Food-3","type":"starters","name":"Veg Spring Roll","cost":120},
+		{"id":"Food-4","type":"starters","name":"Chicken 65","cost":140},
+		{"id":"Food-5","type":"maincourse","name":"Daal Tadka","cost":80},
+		{"id":"Food-6","type":"maincourse","name":"Kadai Paneer","cost":120},
+		{"id":"Food-7","type":"maincourse","name":"Paneer Butter Masala","cost":110},
+		{"id":"Food-8","type":"maincourse","name":"Mix Veg","cost":80},
+		{"id":"Food-9","type":"maincourse","name":"Chicken Butter Masala","cost":150},
+		{"id":"Food-10","type":"breads","name":"Plain Roti","cost":6},
+		{"id":"Food-11","type":"breads","name":"Butter Roti ","cost":10},
+		{"id":"Food-12","type":"breads","name":"Plain Naan","cost":25},
+		{"id":"Food-13","type":"breads","name":"Butter Naan","cost":30},
+		{"id":"Food-14","type":"desserts and beverages","name":"Cold Drink","cost":20},
+		{"id":"Food-15","type":"desserts and beverages","name":"Ice-Cream","cost":40},
+		{"id":"Food-16","type":"desserts and beverages","name":"Rasgulla (2 Pcs)","cost":30},
+		{"id":"Food-17","type":"starters","name":"Dry Chana","cost":60},
+		{"id":"Food-18","type":"starters","name":"Veg Pakoda","cost":70}
+	];
+var tableData =[
+	{ "id":"Table-1","foodItems":[], "itemCount":0, "amount":0 },
+	{ "id":"Table-2","foodItems":[], "itemCount":0, "amount":0 },
+	{ "id":"Table-3","foodItems":[], "itemCount":0, "amount":0 },
+	{ "id":"Table-4","foodItems":[], "itemCount":0, "amount":0 },
+	{ "id":"Table-5","foodItems":[], "itemCount":0, "amount":0 },
+	{ "id":"Table-6","foodItems":[], "itemCount":0, "amount":0 },
+	{ "id":"Table-7","foodItems":[], "itemCount":0, "amount":0 },
+	{ "id":"Table-8","foodItems":[], "itemCount":0, "amount":0 },
+	{ "id":"Table-9","foodItems":[], "itemCount":0, "amount":0 },
+	{ "id":"Table-10","foodItems":[],"itemCount":0, "amount":0 }
+	];

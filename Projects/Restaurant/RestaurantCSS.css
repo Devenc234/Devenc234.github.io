@@ -1,0 +1,244 @@
+/*.w3-content{max-width:980px;margin:auto}.w3-rest{overflow:hidden}
+
+.w3-sidebar{height:100%;width:200px;background-color:#fff;position:fixed!important;z-index:1;overflow:auto}
+.w3-bar-block .w3-dropdown-hover,.w3-bar-block .w3-dropdown-click{width:100%}
+.w3-bar-block .w3-dropdown-hover .w3-dropdown-content,.w3-bar-block .w3-dropdown-click .w3-dropdown-content{min-width:100%}
+.w3-bar-block .w3-dropdown-hover .w3-button,.w3-bar-block .w3-dropdown-click .w3-button{width:100%;text-align:left;padding:8px 16px}
+
+.w3-top,.w3-bottom{position:fixed;width:100%;z-index:1}.w3-top{top:0}.w3-bottom{bottom:0}
+
+.w3-container,.w3-panel{padding:0.01em 16px}.w3-panel{margin-top:16px;margin-bottom:16px}
+.w3-container:after,.w3-container:before,.w3-panel:after,.w3-panel:before,.w3-row:after,.w3-row:before,.w3-row-padding:after,.w3-row-padding:before,
+.w3-cell-row:before,.w3-cell-row:after,.w3-clear:after,.w3-clear:before,.w3-bar:before,.w3-bar:after{content:"";display:table;clear:both}
+
+
+
+/*.w3-main,#main{transition:margin-left .4s}*/
+/*@media (min-width:993px){.w3-col.l1{width:8.33333%}.w3-col.l2{width:16.66666%}.w3-col.l3{width:24.99999%}.w3-col.l4{width:33.33333%}
+.w3-col.l5{width:41.66666%}.w3-col.l6{width:49.99999%}.w3-col.l7{width:58.33333%}.w3-col.l8{width:66.66666%}
+.w3-col.l9{width:74.99999%}.w3-col.l10{width:83.33333%}.w3-col.l11{width:91.66666%}.w3-col.l12{width:99.99999%}}
+
+.w3-content{max-width:980px;margin:40px;}
+
+.w3-bar-item{padding:8px 16px;float:left;width:auto;border:none;outline:none;display:block}
+.w3-button{white-space:normal}*/
+
+
+
+/* for Table Div */
+/*.w3-padding-64{padding-top:64px!important;padding-bottom:64px!important}
+.w3-large{font-size:18px!important}
+.w3-text-grey,.w3-hover-text-grey:hover,.w3-text-gray,.w3-hover-text-gray:hover{color:#757575!important}
+*/
+
+/*#Tables a{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}*/
+
+#foodItems div {
+	box-shadow: 4px 4px 2px #888888;
+	padding: 5px;
+	margin: 15px;
+	border: 2px solid grey;
+	/*color: red;*/
+	width: 300px;
+}
+/*div {
+    width: 300px;
+    height: 100px;
+    background-color: yellow;
+    box-shadow: 10px 10px 5px #888888;
+}*/
+
+/*#headerDhaba {
+	text-align: center; 
+	font-weight: bold; 
+	color: rgb(0,0,0,0.7); 
+	background-color:green;
+	padding: 20px;
+	
+}
+
+#myTablebar{
+	background-color:#fff; 
+	overflow: auto; 
+	padding:8px;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 800px;
+	width:50%;
+}
+
+#content{
+	background-color:#fff; 
+	overflow: auto; 
+	float: left; 
+	padding:8px;
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	height: 80%;
+	width: 50%;
+}*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* Style the header */
+.header {
+    /*background-color: #f1f1f1;*/
+    background-color: green;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+    height: 600px; 
+    overflow: auto;
+}
+
+/* Left column */
+.column.left {
+    width: 50%;
+    left: 0px;
+}
+
+/* Right column */
+.column.right {
+    width: 50%;
+    right: 0px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the footer */
+.footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+}
+
+
+#input1{
+	width: 50%;
+    margin-bottom: 5px;
+	height: 20p	;
+	text-align: center;
+	height: 20px;
+	margin-left: 25%;
+}
+
+#input2{
+	margin-bottom: 5px;
+	text-align: center;
+	width: 40%;
+	height: 20px;
+	margin-left: 30%;
+}
+
+.search-border {
+    border: 2px solid brown;
+    border-radius: 7px;
+}
+
+.search-border:focus { 
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+
+#myModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.modal-content {
+    background-color: #e6ffff;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+    width: 50%;
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+
+#container1{
+	height: 50px;
+	background-color: #1a53ff;
+}
+#billHeader{
+	font-size: 24px;
+	padding-top: 12px;
+	color : #e6ffff;
+	text-align: center;
+}
+#container2{
+	background-color: #ffffff;
+}
+#container3{
+	height: 30px;
+	background-color: #1a53ff;
+}
+#billFooter{
+	font-size: 16px;
+	padding-top: 9px;
+	text-align: center;
+	color : #e6ffff;
+	width: 100%;
+}
+
+#billFooter:hover{
+	/*background-color: #000000;*/
+}
+th, td {
+    padding: 10px;
+}
+
+td{
+	padding-left: 45px;
+}
+#close {
+    position: absolute;
+    right: 27%;
+    top: 11%;
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+    color: #e6ffff;
+}
+
+#close:hover,#close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+#clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
