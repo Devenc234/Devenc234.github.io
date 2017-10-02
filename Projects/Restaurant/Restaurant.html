@@ -18,7 +18,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 <body style="margin-top: 0; margin: auto; box-sizing: border-box;" onload="loadDhaba()">
 
 <div class="header">
-  	<p> Welcome to DadiMa Da Dhaba !</p>
+  	<p> Welcome to Deven Da Dhaba !</p>
 	<hr style="size: 2px;">
 </div>
 
@@ -45,7 +45,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 		    	<b>Menu</b> 
       		</h3> 
 
-      		<input type="text" placeholder="Search menu...by course,by food" name="menu_input" id ="input2" onkeyup="filterMenu()" class="search-border" title = "Search menu...by course,by food">
+      		<input type="text" placeholder="Search Menu" name="menu_input" id ="input2" onkeyup="filterMenu()" class="search-border" title = "Search menu...by course,by food">
       		<i class="fa fa-search"></i>
 
     		<hr>
@@ -57,27 +57,26 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 	</div>
 </div>
 
+<div id="myModal">
+  <span id="close">&times;</span>
+  <div class="modal-content">
+      <div id = "container1">
+        <div id="billHeader"></div>
+      </div>
+      <div id = "container2">
+        <div style="height: 20px"></div>
+        <table style="width:100%" id="billTable">
+        </table>
+      </div>
+      <div id = "container3">
+        <div id="billFooter"> Bring my bill</div>
+      </div>
+  </div>
+</div>
 
 <!-- <div class="footer">
-  <p>Footer</p>
+  <p>Thank You visiting us :) </p>
 </div> -->
-
-    <div id="myModal" style="z-index: 3;">
-      <div class="modal-content">
-          <span id="close">&times;</span>
-          <div id = "container1">
-            <div id="billHeader"></div>
-          </div>
-          <div id = "container2">
-            <div style="height: 20px"></div>
-            <table style="width:100%" id="billTable">
-            </table>
-          </div>
-          <div id = "container3">
-            <div id="billFooter">CLOSE SESSION (GENERATE BILL)</div>
-          </div>
-      </div>
-    </div> 
 
 </body>
 

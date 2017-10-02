@@ -1,15 +1,6 @@
 var foodItems = document.getElementById('foodItems')
 var Tables = document.getElementById('Tables');
 
-var modal = document.getElementById('myModal');
-var span = document.getElementById('close');
-var latest_table, latest_input ,latest_target;
-
-var billFooter = document.getElementById('billFooter');
-billFooter.addEventListener("click",payBill,false);
-
-
-
 function loadDhaba(){
 	addMenu();
 	addTable();
@@ -17,119 +8,90 @@ function loadDhaba(){
 
 function addTable(){
 	for(var i=0; i< tableData.length ; i++){
+	  	var tableDiv = document.createElement('div');
+	  	tableDiv.id = tableData[i].id;
+	  	tableDiv.foodItems = tableData[i].foodItems;
+	  	tableDiv.itemCount = tableData[i].itemCount;
+	  	tableDiv.amount = tableData[i].amount;
+	  	Tables.appendChild(tableDiv);
+	  	tableDiv.innerHTML = tableData[i].id + ' | Rs: 0 | Total items: 0';
 
-  	var tableDiv = document.createElement('div');
-  	// tableDiv.className = "w3-bar-item w3-button";
-  	tableDiv.id = tableData[i].id;
-  	tableDiv.foodItems = tableData[i].foodItems;
-  	tableDiv.itemCount = tableData[i].itemCount;
-  	tableDiv.amount = tableData[i].amount;
-  	tableDiv.style.border = "2px solid blue";
-  	// tableDiv.style.box-shadow = "4px 4px 2px #888888";
-  	Tables.appendChild(tableDiv);
-
-  	// var id = document.createElement('a'); id.textContent = tableData[i].id;
-  	// var info = document.createElement('p'); info.textContent = 'Rs: 0 | Total items: 0';
-  	// tableDiv.appendChild(id);
-  	// tableDiv.appendChild(info);
-  	tableDiv.innerHTML = tableData[i].id + ' | Rs: 0 | Total items: 0';
-
-	tableDiv.addEventListener("dragover",dragover_handler,false);
-	tableDiv.addEventListener("drop",drop_handler,false);
-	tableDiv.addEventListener("dragenter",dragenter_handler,false);
-	tableDiv.addEventListener("dragleave",dragleave_handler,false);
-	tableDiv.addEventListener("click",showBill,false);
-
+		tableDiv.addEventListener("dragover",dragover_handler,false);
+		tableDiv.addEventListener("drop",drop_handler,false);
+		tableDiv.addEventListener("dragenter",dragenter_handler,false);
+		tableDiv.addEventListener("dragleave",dragleave_handler,false);
+		tableDiv.addEventListener("click",showBill,false);
 	}
-
 }
+
 function addMenu(){
-
 	for(var i=0; i< menuData.length ; i++){
-	var foodDiv = document.createElement('div');
-	var foodName = document.createElement('p');
-	var foodPrice = document.createElement('b');
-	// foodDiv.className = 'w3-container foodDiv';
-	foodName.textContent = menuData[i].name;
-	foodPrice.textContent = "Rs: " + menuData[i].cost;
+		var foodDiv = document.createElement('div');
+		var foodName = document.createElement('p');
+		var foodPrice = document.createElement('b');
+		foodName.textContent = menuData[i].name;
+		foodPrice.textContent = "Rs: " + menuData[i].cost;
 
-	foodDiv.id = menuData[i].id;
-	foodDiv.name = menuData[i].name;
-	foodDiv.type = menuData[i].type;
-	foodDiv.cost = menuData[i].cost;
+		foodDiv.id = menuData[i].id;
+		foodDiv.name = menuData[i].name;
+		foodDiv.type = menuData[i].type;
+		foodDiv.cost = menuData[i].cost;
 
+		foodItems.appendChild(foodDiv);
+		foodDiv.appendChild(foodName);
+		foodDiv.appendChild(foodPrice);
 
-	foodItems.appendChild(foodDiv);
-	foodDiv.appendChild(foodName);
-	foodDiv.appendChild(foodPrice);
-
-	foodDiv.draggable = 'true';
-	foodDiv.addEventListener("dragstart",dragstart_handler);
-	foodDiv.addEventListener("dragend",dragend_handler);
+		foodDiv.draggable = 'true';
+		foodDiv.addEventListener("dragstart",dragstart_handler);
+		foodDiv.addEventListener("dragend",dragend_handler);
 	}
 }
-
 
 function dragstart_handler(ev) {
  console.log("dragStart");
+ console.log(ev.target.id);
  ev.currentTarget.style.border = "2px dashed";		// Change the source element's background color to signify drag has started
  ev.currentTarget.style.color = "green";
- console.log(ev.target.id);
  ev.dataTransfer.setData("text", ev.target.id);		//// Add the id of the drag source element to the drag data payload so // it is available when the drop event is fired
  ev.effectAllowed = "copyMove";		// Tell the browser both copy and move are possible
 }
 
-
+var cc;
 function dragenter_handler(ev){
+	cc = ev.currentTarget.style.background;
 	ev.currentTarget.style.background = "lightblue";
+}
+
+function dragleave_handler(ev){
+	if(cc !== "blue"){
+	 ev.currentTarget.style.background = "";
+	}else { ev.currentTarget.style.background = "blue";}
 }
 
 function dragover_handler(ev) {
  ev.preventDefault();
  console.log("dragOver");
- ev.currentTarget.style.background = "blue";		// Change the target element's border to signify a drag over event// has occurred
- // ev.currentTarget.style.color = "purple";
+ ev.currentTarget.style.background = "lightblue";		// Change the target element's border to signify a drag over event// has occurred
 }
-
-function dragleave_handler(ev){
-	 ev.currentTarget.style.background = "";
-}
-
 
 function dragend_handler(ev) {
   console.log("dragEnd");
   // Restore source's style
-  // console.log(event.target);
   ev.target.style = "";
   ev.currentTarget.style=" ";
   // Remove all of the drag data
-  // ev.dataTransfer.clearData();
+  ev.dataTransfer.clearData();
 }
-
-
 
 function drop_handler(ev) {
   console.log("Drop");
   ev.preventDefault();
-  // ev.currentTarget.style.background = rgb(0,0,0,0.4);
+  ev.currentTarget.style.background = "blue";
 
-  // var id = ev.dataTransfer.getData("text");		
-  //  var nodeCopy = document.getElementById(id).cloneNode(true);
-  //  nodeCopy.id = "newId";
-  //  ev.target.appendChild(nodeCopy);
-  //  console.log(ev.target);
-
-
-
-   var itemId = ev.dataTransfer.getData("text");
-   // console.log('item id ' + itemId);
+    var itemId = ev.dataTransfer.getData("text");
     var item = document.getElementById(itemId);
-    // console.log('item ' + item);
-
     var tableId = ev.target.id;
-    // console.log('ddddd ' + tableId);
     var table = document.getElementById(tableId);
-    // console.log('ddddd ' + table.amount);
     var found = false;
 
     if(table.foodItems.length>0){
@@ -144,7 +106,7 @@ function drop_handler(ev) {
     }
 
 
-    if(found == false){
+    if(found === false){
     	console.log('its new item');
     	// if the item is not already on the table then add a new item to the list of items of the table
     	var new_item = {"table_food_id":item.id,"table_food_count": 1, "table_food_name":item.name, "table_food_cost":item.cost};
@@ -153,11 +115,8 @@ function drop_handler(ev) {
     	table.amount+=item.cost;
     }
     // setting the innerHTML of the table
-    // table.children[1].textContent = "Rs: "+ table.amount+ " | Total items: "+ table.itemCount;  
     table.innerHTML = tableId + " | Rs: "+ table.amount+ " | Total items: "+ table.itemCount;
 }
-
-
 
 function filterTables() {
 	var input = document.getElementById('input1');
@@ -191,18 +150,21 @@ function filterMenu(){
     }	
 }
 
+var modal = document.getElementById('myModal');
+var span = document.getElementById('close');
+var latest_table, latest_input ,latest_target;
 
-
-
-
+var billFooter = document.getElementById('billFooter');
+billFooter.addEventListener("click",payBill);
 
 function payBill(){
 	alert("Please pay : INR "+latest_table.amount);
 	modal.style.display = "none";
-	latest_table.total_amount = 0;
-	latest_table.total_items = 0;
-	latest_table.items = [];
+	latest_table.amount = 0;
+	latest_table.itemCount = 0;
+	latest_table.foodItems = [];
 	latest_table.innerHTML = latest_table.id + " | Rs. "+latest_table.amount +" | Total items: "+latest_table.itemCount;
+	latest_table.style.background = "";
 }
 
 function showBill(ev){
@@ -216,7 +178,6 @@ function showBill(ev){
 	billTable.innerHTML = '<tr><th>S.No.</th><th>Item</th><th>Price</th><th>Item Count</th><th>Delete</th></tr>';
 	
 	for(var i=0;i<table.foodItems.length;i++){
-		// var item = document.getElementById(table.foodItems[i].table_food_id);
 		var item = table.foodItems[i];
 		var row = tableRef.insertRow(i+1);
 		
@@ -276,6 +237,14 @@ function deleteItem(ev){
 	latest_table.innerHTML = latest_table.id + " | Rs. "+latest_table.amount +" | Total items: "+latest_table.itemCount;
 }
 
-span.onclick = function() {
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {				
     modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
