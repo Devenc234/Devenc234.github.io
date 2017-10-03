@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to calculate factorial.</p>
+<input type="Number" name="input_x" id="my_number">
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+
+
+</body>
+
+<script>
+
+
+
+function myFunction() {
+var x = document.getElementById('my_number').value;
+var value =parseInt(Number(x));
+console.log(value);
+ if( !isNaN(value) && (parseInt(Number(value)) === value) && !isNaN(parseInt(value, 10)) ) {
+ 	if(value<0){
+ 		document.getElementById("demo").innerHTML = 'factorial not defined for negative integers';
+ 	}
+ 	else{
+ 	 var result = 1;
+ 	 for( var i=1;i<=value;i++) {result =  result *i; console.log("factorial: "+result);}
+ 	}
+
+    document.getElementById("demo").innerHTML = result;
+}
+else {
+	document.getElementById("demo").innerHTML = "Not a valid input";
+}
+}
+
+// Answer:
+
+// function myFunction(value) {
+// 	if( !isNaN(value) && (parseInt(Number(value)) === value) && !isNaN(parseInt(value, 10)) ) {
+// 		if(value<0){
+// 			console.log('factorial not defined for negative integers');
+// 		}
+// 		else{
+// 		 var result = 1;
+// 		 for( var i=1;i<=value;i++) {result =  result *i;}
+// 		}
+// 		console.log('factorial:'+ result);
+// 	}
+// 	else {
+// 	console.log("Not a valid input");
+// 	}
+// }
+
+
+</script>
+</html>
+
+

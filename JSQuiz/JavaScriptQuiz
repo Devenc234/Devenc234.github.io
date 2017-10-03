@@ -1,0 +1,162 @@
+Q1 What is the use of isNaN function?
+
+The isNaN() function determines whether a value is NaN or not.
+NaN values are generated when arithmetic operations result in undefined or unrepresentable values. Such values do not necessarily represent overflow conditions. 
+A NaN also results from attempted coercion to numeric values of non-numeric values for which no primitive numeric value is available.
+
+Unlike all other possible values in JavaScript, it is not possible to rely on the equality operators (== and ===) to determine whether a value is NaN or not, because both (NaN == NaN) and (NaN === NaN) evaluate to false. Hence, the necessity of an isNaN function.
+
+isNaN(NaN);       // true
+isNaN(undefined); // true
+isNaN({});        // true
+
+isNaN(true);      // false
+isNaN(null);      // false
+isNaN(37);        // false
+
+// strings
+isNaN('37');      // false: "37" is converted to the number 37 which is not NaN
+isNaN('37.37');   // false: "37.37" is converted to the number 37.37 which is not NaN
+isNaN('123ABC');  // true:  parseInt("123ABC") is 123 but Number("123ABC") is NaN
+isNaN('');        // false: the empty string is converted to 0 which is not NaN
+isNaN(' ');       // false: a string with spaces is converted to 0 which is not NaN
+
+// dates
+isNaN(new Date());                // false
+isNaN(new Date().toString());     // true
+
+// This is a false positive and the reason why isNaN is not entirely reliable
+isNaN('blabla');   // true: "blabla" is converted to a number. Parsing this as a number fails and returns NaN
+
+Usage:
+
+ If isNaN(x) returns false, we can use x in an arithmetic expression not making the expression return NaN. If it returns true, x will make every arithmetic expression return NaN. We can use it to test whether an argument to a function is arithmetically processable (usable "like" a number), or if it's not and we have to provide a default value or something else. This way we can have a function that makes use of the full versatility JavaScript provides by implicitly converting values depending on context.
+
+
+
+
+
+
+
+Q2 What is difference between "==" and "===" operators in javascript?
+
+JavaScript has both strict and type-converting equality comparison. The identity (===) operator behaves identically to the equality (==) operator except no type conversion is done, and the types must be the same to be considered equal. The == operator will compare for equality after doing any necessary type conversions. The === operator will not do the conversion, so if two values are not the same type === will simply return false. Both are equally quick.
+
+
+Q3 
+What would be the result of
+a) 3 + 2 + "7"
+b) "7" + 3 + 2
+
+a) "57"
+b) "732"
+
+Operator Associativity in JavaScript:
+Expression evaluation is influenced by the operator associativity. Associativity means the direction (right to left or left to right) in which entire expression is evaluated. If two or more operators with the same level of precedence appear in an expression, which will be evaluated first?
+Source: http://www.scriptingmaster.com/javascript/operator-precedence.asp
+
++ 	Plus 	-> Left to right 	
++ 	String Concatenation  -> Left to right
+
+
+
+
+
+
+
+Q4
+var arrayList = ['a','b','c','d','e','f'];
+what is the result of arrayList.splice(0, arrayList.length)?
+
+result : [ "a", "b", "c", "d", "e", "f" ]
+
+Syntax:
+array.splice(index, howmany, item1, ....., itemX)
+
+index 	: Required. An integer that specifies at what position to add/remove items, Use negative values to specify the position from the end of the array.
+howmany 	: Optional. The number of items to be removed. If set to 0, no items will be removed.
+item1, ..., itemX 	: Optional. The new item(s) to be added to the array.
+
+as arrayList.length = 6 
+which mean
+arrayList.spllice(0,6);
+But index in arrayList starts from 0 and there is nothing to delete at 6th position. so return the same arrayList.
+
+
+
+
+Q5
+var addition = function(x, y){
+return x + y;
+}
+what is the result of
+a) addition(3, 3);
+b) addition(3)
+
+a) 6    as in this ( 3 + 3)
+b) NaN  as in this ( 3 + undefined  -> NaN)
+
+
+
+
+
+
+Q6 How do you create a new object in JavaScript?
+
+JavaScript has a number of predefined objects. In addition, we can create our own objects. 
+
+1) We can create create a single object, with the keyword new.
+2) We can create an object using an object initializer. Using object initializers is sometimes referred to as creating objects with literal notation.
+3) we can first create a constructor function and then instantiate an object invoking that function in conjunction with the new operator.
+
+Objects can also be created using the Object.create() method. This method can be very useful, because it allows you to choose the prototype object for the object you want to create, without having to define a constructor function.
+
+
+
+
+
+
+
+
+Q7 What does the below function do?
+function Handler() {
+   document.getElementById("myDIV").removeEventListener("mousemove", myFunction);
+}
+
+The above function will find the element with id of "myDiv" and remove the eventlistener of mousemove attached with this element.
+
+removeEventListener:
+The removeEventListener() method removes an event handler that has been attached with the addEventListener() method. To remove event handlers, the function specified with the addEventListener() method must be an external function. Anonymous functions, like "element.removeEventListener("event", function(){ myScript });" will not work.
+
+
+
+
+Q8 Write a function that returns factorial of a given number?
+
+function myFunction(value) {
+	if( !isNaN(value) && (parseInt(Number(value)) === value) && !isNaN(parseInt(value, 10)) ) {
+		if(value<0){
+			console.log('factorial not defined for negative integers');
+		}
+		else{
+		 var result = 1;
+		 for( var i=1;i<=value;i++) {result =  result *i;}
+		}
+		console.log('factorial:'+ result);
+	}
+	else {
+	console.log("Not a valid input");
+	}
+}
+
+
+Q9 What is the result of "ZeMoSo".lastIndexOf("o")?
+
+result : 5
+It gives the index of last occurrence of "o" in the word "Zemoso". If not found then return -1.
+
+
+Q10 What is the result of "ZeMoSo".search("o")?
+
+result : 3
+It gives the index of first occurrence of "o" in the word "Zemoso". If not found then return -1.
