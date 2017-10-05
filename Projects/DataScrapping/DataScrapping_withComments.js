@@ -20,6 +20,7 @@ function DataExtractor (){
 		if( formatted_line.indexOf('DEPARTMENT OF')>=0) { 
 			dept = formatted_line; 
 			if( dept.indexOf('NEUROLOGY')>=0) { dept = 'DEPARTMENT OF NEUROLOGY';}
+			// console.log('Department : '+dept);
 			continue; 
 		}else {
 
@@ -27,6 +28,7 @@ function DataExtractor (){
 			var regex2 = /(\d+)(\s+)?$/;
 			if( regex1.test(formatted_line) &&  regex2.test(formatted_line)){
 				if(formatted_line.length > 80) {
+					// console.log('Length greater: '+formatted_line);
 					exception.push(formatted_line); 
 				 } else{
 
@@ -39,8 +41,12 @@ function DataExtractor (){
 				 	if(rate ==='') { rate = temp_array[len-2]; len--; }
 
 				 	for(var k=1; k<len-1;k++){
+				 		//console.log(temp_array[k]);
 				 		info+=temp_array[k];
 				 	}
+				 	// console.log('code: '+code);
+				 	// console.log('info: '+info);
+				 	// console.log('rate: '+rate);
 
 				 	item = {
 				 		"Department": dept,
@@ -54,6 +60,7 @@ function DataExtractor (){
 			} else {
 				var regex = /\w+/;
 				if(regex.test(formatted_line)){
+					//console.log('no match: ' + formatted_line);
 					exception.push(formatted_line);
 				}
 			}
@@ -79,6 +86,46 @@ function DataExtractor (){
 	itemCount++;
 }
 
+
+// $(document).ready(function () {
+
+//         // Create Object
+//         // var items = [
+//         //       { name: "Item 1", color: "Green", size: "X-Large" },
+//         //       { name: "Item 2", color: "Green", size: "X-Large" },
+//         //       { name: "Item 3", color: "Green", size: "X-Large" }];
+//         var items = Hospital;
+
+//         // Convert Object to JSON
+//         var jsonObject = JSON.stringify(items);
+
+//         // Display JSON
+//         $('#json').text(jsonObject);
+
+//         // Convert JSON to CSV & Display CSV
+//         $('#csv').text(ConvertToCSV(jsonObject));
+// });
+
+
+// // JSON to CSV Converter
+// function ConvertToCSV(objArray) {
+//     var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
+//     var str = '';
+
+//     for (var i = 0; i < array.length; i++) {
+//         var line = '';
+//         for (var index in array[i]) {
+//             if (line != '') line += ','
+
+//             line += array[i][index];
+//         }
+
+//         str += line + '\r\n';
+//     }
+
+//     return str;
+// }
+
 var CSV;
 var link = document.getElementById('DownloadLink'); 
 link.addEventListener('click',myFunction);
@@ -89,6 +136,44 @@ function myFunction (){
 	CSV = toCsv(Hospital);
 	CSVDownloader(CSV);
 }
+
+
+function CSVDownloader( CSV ){
+
+	if (CSV == '') {        
+        alert("Invalid data");
+        return;
+    }   
+    
+    ReportTitle = "Exported Data";
+    //Generate a file name
+    var fileName = "My_";
+    //this will remove the blank-spaces from the title and replace it with an underscore
+    fileName += ReportTitle.replace(/ /g,"_");   
+    
+    //Initialize file format you want csv or xls
+    var uri = 'data:text/csv;charset=utf-8,' + escape(CSV);
+    
+    // Now the little tricky part.
+    // you can use either>> window.open(uri);
+    // but this will not work in some browsers
+    // or you will not get the correct file extension    
+    
+    //this trick will generate a temp <a /> tag
+    
+    link.href = uri;
+    
+    //set the visibility hidden so it will not effect on your web-layout
+    //link.style = "visibility:hidden";
+    link.download = fileName + ".csv";
+    
+    //this part will append the anchor tag and remove it after automatic click
+    // document.body.appendChild(link);
+    // link.click();
+    // link.addEventListener('click',myFunction);
+    // document.body.removeChild(link);
+}
+
 
 
 /**
@@ -163,27 +248,4 @@ function toCsvValue(theValue, sDelimiter) {
 	}
 
 	return output;
-}
-
-function CSVDownloader( CSV ){
-	if (CSV == '') {        
-        alert("Invalid data");
-        return;
-    }   
-    
-    ReportTitle = "Exported Data";
-
-    //Generate a file name
-    var fileName = "My_";
-    //this will remove the blank-spaces from the title and replace it with an underscore
-    fileName += ReportTitle.replace(/ /g,"_");   
-    
-    //Initialize file format you want csv or xls
-    var uri = 'data:text/csv;charset=utf-8,' + escape(CSV);
-    
-    //this trick will generate a temp <a /> tag
-    link.href = uri;
-    
-    //set the visibility hidden so it will not effect on your web-layout
-    link.download = fileName + ".csv";
 }
